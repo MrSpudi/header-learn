@@ -1,0 +1,160 @@
+:root {
+    --radial-bg: radial-gradient(50% 50.00% at 50% 50.00%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%);
+    --liner-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(255, 255, 255, 0.00) 99.99%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+@mixin background-clip {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin bg ($color) {
+    background: linear-gradient(47.06deg, $color -3.87%, rgba(255, 255, 255, 0) 20.89%), #ffffff;
+}
+
+.slide {
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    // background-image: url('./../../img/slider-bg/01.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #555;
+
+    &--norway {
+        background: var(--radial-bg), var(--liner-bg), url('./../../img/slider-bg/01.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &--austria {
+        background: var(--radial-bg), var(--liner-bg), url('./../../img/slider-bg/02.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &--uai {
+        background: var(--radial-bg), var(--liner-bg), url('./../../img/slider-bg/03.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &--thailand {
+        background: var(--radial-bg), var(--liner-bg), url('./../../img/slider-bg/04.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &--maroko {
+        background: var(--radial-bg), var(--liner-bg), url('./../../img/slider-bg/05.jpg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    color: #fff;
+
+    &::before {
+        content: '';
+    }
+
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    @media(max-width: 1200px) {
+        padding-bottom: 60px;
+    }
+
+    @media(max-width:767px) {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+}
+
+.slide__header {
+    text-align: center;
+    position: relative;
+}
+
+.slide__tagline {
+    position: absolute;
+    top: -8px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.56vw;
+    line-height: 1.23;
+    letter-spacing: 0.55em;
+    color: rgba(255, 255, 255, 0.7);
+
+    @media(max-width:767px) {
+        font-size: 3vw;
+    }
+}
+
+.slide__title {
+    display: inline-block;
+    padding: 0 10px;
+    // font-size: 250px;
+    font-size: 13vw;
+    font-weight: 700;
+    line-height: 1.22;
+
+    @media(max-width:767px) {
+        font-size: 19vw;
+    }
+
+
+    @include bg(#000000);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+
+    &--norway  {
+        @include bg(#051d27); 
+    }
+
+    &--austria  {
+        @include bg(#122127); 
+    }
+
+    &--uai  {
+        @include bg(#aa6621); 
+    }
+
+    &--thailand  {
+        @include bg(#2e7c88); 
+    }
+
+    &--maroko  {
+        @include bg(#757575); 
+    }
+}
+
+.slide__locations {
+    display: flex;
+    column-gap: 30px;
+    width: 70%;
+    margin: 0 auto;
+
+    @media(max-width: 1023px) {
+        width: 90%;
+    }
+
+    @media(max-width: 767px) {
+        width: 90%;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
